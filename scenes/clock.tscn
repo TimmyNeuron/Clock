@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0jvvh1v0nacx"]
+[gd_scene load_steps=8 format=3 uid="uid://d0jvvh1v0nacx"]
 
 [ext_resource type="Texture2D" uid="uid://k2gyo482neg3" path="res://assets/table.png" id="1_eptq3"]
+[ext_resource type="Script" uid="uid://cqlripf416v3y" path="res://scripts/clock.gd" id="1_r7ruc"]
 [ext_resource type="Texture2D" uid="uid://4cwoln10egia" path="res://assets/clock.png" id="1_vlc7k"]
 [ext_resource type="FontFile" uid="uid://c4gtlwdgf7c06" path="res://assets/Kenney Mini Square.ttf" id="3_7dv1d"]
 [ext_resource type="Texture2D" uid="uid://cvtgkyuwdn3rg" path="res://assets/Fullscreenicon.png" id="4_7dv1d"]
+[ext_resource type="Script" uid="uid://c8abf35ebfjsc" path="res://scripts/button.gd" id="5_er1xc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dv1d"]
 
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r7ruc")
 
 [node name="TableTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -65,10 +68,11 @@ theme_override_colors/font_color = Color(1, 0, 0.6156863, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_7dv1d")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "12:18"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Button" type="Button" parent="ClockTexture"]
 layout_mode = 1
@@ -83,6 +87,10 @@ offset_right = 12.079987
 offset_bottom = 12.040001
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Fullscreen"
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7dv1d")
 icon = ExtResource("4_7dv1d")
 flat = true
+script = ExtResource("5_er1xc")
+
+[node name="Cooldown" type="Timer" parent="ClockTexture/Button"]

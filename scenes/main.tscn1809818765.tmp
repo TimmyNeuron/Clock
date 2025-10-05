@@ -12,13 +12,14 @@ grow_vertical = 2
 
 [node name="Clock" parent="." instance=ExtResource("1_o5qli")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 80
-zoom = Vector2(2.5, 2.5)
+position = Vector2(640, 360)
+zoom = Vector2(2.056, 1.714)
