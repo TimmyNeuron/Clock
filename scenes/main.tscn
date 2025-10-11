@@ -21,4 +21,3 @@ scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 80
-zoom = Vector2(2.5, 2.5)
