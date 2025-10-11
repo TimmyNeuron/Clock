@@ -1,6 +1,6 @@
 extends Button
 
-#var screen_tween_in: Tween = create_tween()
+var direction = "in"
 
 @onready var main: Control = $"../../.."
 @onready var camera: Camera2D = $"../../../Camera2D"
@@ -9,10 +9,16 @@ extends Button
 
 @onready var cooldown: Timer = $Cooldown
 
+var on_cooldown = false
+
 func _ready() -> void:
-	#screen_tween_in.tween_property(camera, "zoom", 5)
-	#print(screen_tween_in.is_running())
 	pass
 
+
 func _pressed() -> void:
-	pass
+	if direction == "in":
+		print("in")
+		direction = "out"
+	elif direction == "out":
+		print("out")
+		direction = "in"

@@ -94,3 +94,4 @@ flat = true
 script = ExtResource("5_er1xc")
 
 [node name="Cooldown" type="Timer" parent="ClockTexture/Button"]
+one_shot = true

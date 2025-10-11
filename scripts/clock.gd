@@ -45,18 +45,24 @@ func _physics_process(_delta: float) -> void:
 	
 	var hour = time.hour
 	var minute = time.minute
+	var second = time.second
 	
 	if !military_time and time.hour > 12:
 		hour = time.hour - 12
 		relation_to_meridian = "PM"
 	
+	if time.second < 10:
+		second = str("0", time.second)
+	
 	if time.minute < 10:
 		minute = str("0", time.minute)
+	
+	if time.hour < 10:
+		hour = str("0", hour)
 		
 	
 	if military_time:
-		label.text = str(hour, ":", minute, ":", time.second)
+		label.text = str(hour, ":", minute, ":", second)
 	else:
-		label.text = str(hour, ":", minute, ":", time.second, " ", relation_to_meridian)
-	
+		label.text = str(hour, ":", minute, ":", second, " ", relation_to_meridian)
 	
